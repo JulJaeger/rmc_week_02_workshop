@@ -1,0 +1,5 @@
+"0","# Filter the dataset to include only the three countries chosen by your group."
+"0","data_overall_mini <-data_overall %>% filter(Entity %in% c(""Ghana"", ""Burkina Faso"", ""Cote d'Ivoire""))"
+"0",""
+"0","data_mini_clean <-  data_overall_mini %>% "
+"0","  rename(Country = Entity, Daly = `DALYs (Disability-Adjusted Life Years) - All causes - Sex: Both - Age: Age-standardized (Rate)`)"
