@@ -49,6 +49,20 @@ kable(data_cmnn_wide,
 
 ```{r}
 # Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+
+ggplot(data_cmnn_mini, 
+       mapping = aes(x = Year, 
+                     y = dalys,
+                     color = Entity)) +
+  geom_line() +
+  labs(title = "DALYs (Disability Adjusted Life Years) over time",
+       x = "Year",
+       y = "DALYs (in Persons Years)",
+       color = "Countries") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5) # Bold and centered title
+  )
 # NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table. 
 ```
 
