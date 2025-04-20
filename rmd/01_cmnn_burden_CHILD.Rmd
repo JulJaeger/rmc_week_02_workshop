@@ -45,12 +45,12 @@ kable(data_cmnn_wide,
       caption = "DALYS by Country and Year")
 
 ```
+---
 
 ## Plot Showing Trends in CMNN Burden Over Time in West Africa
 
 Ghana, Burkino Faso and Cote d'Ivoire are three West African countries that started out with significantly different numbers of DALYs but due to continous efforts in health care have aligned over the past 20 years. 
 
-Communicable, Maternal, Neonatal, and Nutritional diseases. These represent a group of health conditions that significantly contribute to the global burden of disease, particularly in low- and middle-income countries.
 
 ```{r}
 # Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
