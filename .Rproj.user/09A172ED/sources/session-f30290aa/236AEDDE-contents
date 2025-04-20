@@ -25,6 +25,7 @@ data_cmnn_mini <- data_cmnn %>%
 ```{r table, echo=F}
 # Here render a table for the DALY burden over time for the three countries.
 # You should pivot the data wider to show each country in a separate column.
+
 data_cmnn_wide <- data_cmnn_mini %>% 
    pivot_wider(
     names_from = Year,
