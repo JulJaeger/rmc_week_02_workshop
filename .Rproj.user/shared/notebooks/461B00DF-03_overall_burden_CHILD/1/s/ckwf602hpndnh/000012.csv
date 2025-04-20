@@ -1,6 +1,0 @@
-"0","# Here render a table for the DALY burden over time for the three countries. "
-"0","# You should pivot the data wider to show each country in a separate column."
-"0","data_overall_wide <- data_mini_clean %>%  select(Year, Country ,Daly) %>% "
-"0","pivot_wider(names_from = Country,values_from = Daly)"
-"0","# Use kable() from the knitr package to render the table."
-"0","kable(data_overall_wide , caption = ""Daly Burden over time (Age Standardised Rate)"")"
