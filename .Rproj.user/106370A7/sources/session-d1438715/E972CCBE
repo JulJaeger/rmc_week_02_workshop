@@ -3,7 +3,7 @@
     "path": "C:/Users/Maintenant Prêt/OneDrive/Desktop/Graph course 2025/level 2 master class/week2/rmc_week_02_workshop/rmd/03_overall_burden_CHILD.Rmd",
     "project_path": "rmd/03_overall_burden_CHILD.Rmd",
     "type": "r_markdown",
-    "hash": "3239689459",
+    "hash": "3317883542",
     "contents": "",
     "dirty": false,
     "created": 1745165150744.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "35,48",
-        "scrollLine": "28"
+        "cursorPosition": "51,291",
+        "scrollLine": "46"
     },
     "folds": "",
-    "lastKnownWriteTime": 1745167611,
+    "lastKnownWriteTime": 1745168628,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1745167611934,
+    "last_content_update": 1745168628611,
     "read_only": false,
     "read_only_alternatives": []
 }
