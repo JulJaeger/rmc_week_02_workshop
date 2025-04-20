@@ -33,7 +33,7 @@ kable(data_overall_wide , caption = "Daly Burden over time (Age Standardised Rat
 # Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
 # NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table. 
 plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
-  geom_line(linewidth = 1) + geom_point(size=2)  +
+  geom_line(linewidth = 0.8) + geom_point(size=1)  +
  labs(
     title = "Trend of DALY Burden Over Time",
     subtitle = "Age-standardized DALY Rates for
@@ -49,4 +49,4 @@ print(plot)
 ## Summary of Overall Disease Burden Findings
 
 Provide a brief analysis based on the data presented in the table and chart. Highlight any significant findings or patterns. About 3 sentences.
-The DALY burden (age-standardized rate) shows a consistent **decline across all three countries** from 1990 to 2019, indicating overall improvements in population health. **Ghana experienced the most significant reduction**, dropping from ~65,400 to ~45,965 a 30% decrease while **Cote d’Ivoire initially rose before steadily declining after 1998**. **Burkina Faso, although starting with the highest DALY rate, demonstrated a steady downward trend**, reflecting gradual but consistent health improvements over the decades.
+The DALY burden (age-standardized rate) shows a consistent **decline across all three countries** from 1990 to 2019, indicating overall improvements in population health. **Ghana experienced the most significant reduction**, dropping from  around 65,400 to 45,965 a 30% decrease while **Cote d’Ivoire initially rose before steadily declining after 1998**. **Burkina Faso, although starting with the highest DALY rate, demonstrated a steady downward trend**, reflecting gradual but consistent health improvements over the decades.
