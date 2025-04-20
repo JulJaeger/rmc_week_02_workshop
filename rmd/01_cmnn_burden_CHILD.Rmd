@@ -21,7 +21,7 @@ data_cmnn <- read_csv(here("data/burden-of-disease-cmnn.csv"))
 
 data_cmnn_mini <- data_cmnn %>% 
   filter(Code %in% c("CIV", "GHA", "BFA")) %>% 
-  rename(dalys = `DALYs (Disability-Adjusted Life Years) - Communicable, maternal, neonatal, and nutritional diseases - Sex: Both - Age: Age-standardized (Rate)`)
+  rename(dalys = `DALYs (Disability-Adjusted Life Years) - Communicable, maternal, neonatal, and nutritional diseases - Sex: Both - Age: Age-standardized (Rate)`, Country = Entity)
 
 ```
 Communicable, Maternal, Neonatal, and Nutritional diseases (CMNN) represent a group of health conditions that significantly contribute to the global burden of disease, particularly in low- and middle-income countries.
@@ -34,14 +34,14 @@ Communicable, Maternal, Neonatal, and Nutritional diseases (CMNN) represent a gr
 # You should pivot the data wider to show each country in a separate column.
 
 data_cmnn_wide <- data_cmnn_mini %>% 
+  select(Year, Country ,dalys) %>% 
    pivot_wider(
-    names_from = Year,
+    names_from = Country,
     values_from = dalys  
   )
 
 # Use kable() from the knitr package to render the table.
 kable(data_cmnn_wide,
-      col.names = c("Country", "Country Code", as.character(1990:2019)),
       caption = "DALYS by Country and Year")
 
 ```
@@ -58,7 +58,7 @@ Ghana, Burkino Faso and Cote d'Ivoire are three West African countries that star
 ggplot(data_cmnn_mini, 
        mapping = aes(x = Year, 
                      y = dalys,
-                     color = Entity)) +
+                     color = Country)) +
   geom_line() +
   geom_point() +
   labs(title = "DALYs (Disability Adjusted Life Years) over time",

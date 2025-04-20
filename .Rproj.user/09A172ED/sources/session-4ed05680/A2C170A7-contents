@@ -1,0 +1,52 @@
+# Overall Disease Burden
+
+```{r}
+# Load necessary packages
+pacman::p_load(tidyverse, knitr, here)
+
+# Import the overall disease data
+data_overall <- read_csv(here("data/burden-of-disease-all-causes.csv"))
+```
+
+```{r}
+# Filter the dataset to include only the three countries chosen by your group.
+data_overall_mini <-data_overall %>% filter(Entity %in% c("Ghana", "Burkina Faso", "Cote d'Ivoire"))
+
+data_mini_clean <-  data_overall_mini %>% 
+  rename(Country = Entity, Daly = `DALYs (Disability-Adjusted Life Years) - All causes - Sex: Both - Age: Age-standardized (Rate)`)
+```
+
+## Table of Estimates for Overall Disease Burden Over Time
+
+```{r}
+# Here render a table for the DALY burden over time for the three countries. 
+# You should pivot the data wider to show each country in a separate column.
+data_overall_wide <- data_mini_clean %>%  select(Year, Country ,Daly) %>% 
+pivot_wider(names_from = Country,values_from = Daly)
+# Use kable() from the knitr package to render the table.
+kable(data_overall_wide , caption = "Daly Burden over time (Age Standardised Rate)")
+```
+
+## Plot Showing Trends in Overall Disease Burden Over Time
+
+```{r}
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table. 
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+  geom_line(linewidth = 0.8) + geom_point(size=1)  +
+ labs(
+    title = "Trend of DALY Burden Over Time",
+    subtitle = "Age-standardized DALY Rates for
+    Ghana, Burkina Faso, and Cote d'Ivoire",
+    x = "Year",
+    y = "DALY (Age-standardized Rate)",
+    color = "Country"
+  ) +
+  theme_minimal()
+print(plot)
+```
+
+## Summary of Overall Disease Burden Findings
+
+Provide a brief analysis based on the data presented in the table and chart. Highlight any significant findings or patterns. About 3 sentences.
+The DALY burden (age-standardized rate) shows a consistent **decline across all three countries** from 1990 to 2019, indicating overall improvements in population health. **Ghana experienced the most significant reduction**, dropping from  around 65,400 to 45,965 a 30% decrease while **Cote d’Ivoire initially rose before steadily declining after 1998**. **Burkina Faso, although starting with the highest DALY rate, demonstrated a steady downward trend**, reflecting gradual but consistent health improvements over the decades.

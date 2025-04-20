@@ -3,7 +3,7 @@
     "path": "~/GitHub/rmc_week_02_workshop/rmd/01_cmnn_burden_CHILD.Rmd",
     "project_path": "rmd/01_cmnn_burden_CHILD.Rmd",
     "type": "r_markdown",
-    "hash": "3525183896",
+    "hash": "983518635",
     "contents": "",
     "dirty": false,
     "created": 1745164550611.0,
@@ -12,16 +12,16 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "48,0",
-        "scrollLine": "40",
-        "last_setup_crc32": ""
+        "cursorPosition": "71,0",
+        "scrollLine": "73",
+        "last_setup_crc32": "4ed05680ae9ccc5c"
     },
     "folds": "",
-    "lastKnownWriteTime": 1745173707,
+    "lastKnownWriteTime": 1745174348,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1745173708001,
+    "last_content_update": 1745174348751,
     "read_only": false,
     "read_only_alternatives": []
 }
