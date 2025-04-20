@@ -357,15 +357,186 @@ display: none;
 (CMNN)</h1>
 <div id="table-of-estimates-for-cmnn-burden-over-time" class="section level2">
 <h2>Table of Estimates for CMNN Burden Over Time</h2>
-<pre class="r"><code># Here render a table for the DALY burden over time for the three countries.
-# You should pivot the data wider to show each country in a separate column.
-data_cmnn_wide &lt;- &quot;WRITE_YOUR_CODE_HERE&quot;
-# Use kable() from the knitr package to render the table.</code></pre>
+<table style="width:100%;">
+<caption>DALYS by Country and Year</caption>
+<colgroup>
+<col width="4%" />
+<col width="4%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+<col width="3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Country</th>
+<th align="left">Country Code</th>
+<th align="right">1990</th>
+<th align="right">1991</th>
+<th align="right">1992</th>
+<th align="right">1993</th>
+<th align="right">1994</th>
+<th align="right">1995</th>
+<th align="right">1996</th>
+<th align="right">1997</th>
+<th align="right">1998</th>
+<th align="right">1999</th>
+<th align="right">2000</th>
+<th align="right">2001</th>
+<th align="right">2002</th>
+<th align="right">2003</th>
+<th align="right">2004</th>
+<th align="right">2005</th>
+<th align="right">2006</th>
+<th align="right">2007</th>
+<th align="right">2008</th>
+<th align="right">2009</th>
+<th align="right">2010</th>
+<th align="right">2011</th>
+<th align="right">2012</th>
+<th align="right">2013</th>
+<th align="right">2014</th>
+<th align="right">2015</th>
+<th align="right">2016</th>
+<th align="right">2017</th>
+<th align="right">2018</th>
+<th align="right">2019</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Burkina Faso</td>
+<td align="left">BFA</td>
+<td align="right">63755.89</td>
+<td align="right">64258.61</td>
+<td align="right">64707.32</td>
+<td align="right">64619.45</td>
+<td align="right">64486.32</td>
+<td align="right">64183.54</td>
+<td align="right">66891.80</td>
+<td align="right">64141.29</td>
+<td align="right">61268.98</td>
+<td align="right">59629.47</td>
+<td align="right">57929.90</td>
+<td align="right">56882.63</td>
+<td align="right">54955.43</td>
+<td align="right">53131.82</td>
+<td align="right">50977.18</td>
+<td align="right">48976.26</td>
+<td align="right">46974.09</td>
+<td align="right">45813.12</td>
+<td align="right">43993.26</td>
+<td align="right">42798.42</td>
+<td align="right">41526.65</td>
+<td align="right">40393.16</td>
+<td align="right">39087.38</td>
+<td align="right">37641.61</td>
+<td align="right">35988.90</td>
+<td align="right">34316.02</td>
+<td align="right">32767.10</td>
+<td align="right">31316.24</td>
+<td align="right">30153.88</td>
+<td align="right">29326.57</td>
+</tr>
+<tr class="even">
+<td align="left">Cote d’Ivoire</td>
+<td align="left">CIV</td>
+<td align="right">48290.89</td>
+<td align="right">49981.16</td>
+<td align="right">52152.32</td>
+<td align="right">54533.43</td>
+<td align="right">57163.73</td>
+<td align="right">59688.74</td>
+<td align="right">61083.07</td>
+<td align="right">62032.09</td>
+<td align="right">62582.06</td>
+<td align="right">62606.74</td>
+<td align="right">61840.78</td>
+<td align="right">60987.21</td>
+<td align="right">59777.70</td>
+<td align="right">58680.03</td>
+<td align="right">57147.28</td>
+<td align="right">54836.45</td>
+<td align="right">51846.98</td>
+<td align="right">49337.74</td>
+<td align="right">46603.42</td>
+<td align="right">44674.68</td>
+<td align="right">43434.15</td>
+<td align="right">41820.51</td>
+<td align="right">39364.23</td>
+<td align="right">37397.74</td>
+<td align="right">35456.04</td>
+<td align="right">33218.91</td>
+<td align="right">31500.47</td>
+<td align="right">29771.69</td>
+<td align="right">27849.46</td>
+<td align="right">26606.75</td>
+</tr>
+<tr class="odd">
+<td align="left">Ghana</td>
+<td align="left">GHA</td>
+<td align="right">38169.03</td>
+<td align="right">37543.84</td>
+<td align="right">37134.43</td>
+<td align="right">36581.16</td>
+<td align="right">36468.65</td>
+<td align="right">36486.44</td>
+<td align="right">36604.25</td>
+<td align="right">37106.98</td>
+<td align="right">36529.98</td>
+<td align="right">36491.57</td>
+<td align="right">36511.40</td>
+<td align="right">36543.17</td>
+<td align="right">36337.37</td>
+<td align="right">35934.13</td>
+<td align="right">35389.60</td>
+<td align="right">34746.13</td>
+<td align="right">34048.81</td>
+<td align="right">33299.14</td>
+<td align="right">32442.34</td>
+<td align="right">31470.54</td>
+<td align="right">30352.22</td>
+<td align="right">28746.38</td>
+<td align="right">27367.24</td>
+<td align="right">26364.20</td>
+<td align="right">25361.35</td>
+<td align="right">24430.32</td>
+<td align="right">23350.04</td>
+<td align="right">22336.89</td>
+<td align="right">21254.46</td>
+<td align="right">20202.91</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="plot-showing-trends-in-cmnn-burden-over-time" class="section level2">
 <h2>Plot Showing Trends in CMNN Burden Over Time</h2>
-<pre class="r"><code># Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country&#39;s line should be a different color.
-# NOTE: Use your long &#39;mini&#39; data frame for plotting, not the wide data used for the table. </code></pre>
 </div>
 <div id="summary-of-cmnn-burden-findings" class="section level2">
 <h2>Summary of CMNN Burden Findings</h2>

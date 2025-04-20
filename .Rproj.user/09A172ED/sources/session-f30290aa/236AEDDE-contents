@@ -1,6 +1,11 @@
 # Communicable, Maternal, Neonatal, and Nutritional Disease Burden (CMNN)
 
-```{r import dataset, echo=F, eval=F}
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE)
+```
+
+
+```{r dataset}
 # Load necessary packages
 pacman::p_load(tidyverse, knitr, here)
 
@@ -9,7 +14,7 @@ data_cmnn <- read_csv(here("data/burden-of-disease-cmnn.csv"))
 
 ```
 
-```{r selected countries, echo=F, eval=F}
+```{r selected countries}
 # Filter the dataset to include only the three countries chosen by your group.
 
 # Chosen countries: Ghana (GHA), Burkina Faso (BFA), Cote d'Ivoire(CIV)
@@ -22,7 +27,8 @@ data_cmnn_mini <- data_cmnn %>%
 
 ## Table of Estimates for CMNN Burden Over Time
 
-```{r table, echo=F}
+```{r table}
+
 # Here render a table for the DALY burden over time for the three countries.
 # You should pivot the data wider to show each country in a separate column.
 
