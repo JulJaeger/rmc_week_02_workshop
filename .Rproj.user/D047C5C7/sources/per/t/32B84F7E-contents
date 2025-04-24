@@ -46,3 +46,5 @@ ggplot(data_ncd_mini, aes(x = Year, y = `DALYs (Disability-Adjusted Life Years) 
 ## Summary of NCD Burden Findings
 
 Provide a brief analysis based on the data presented in the table and chart. Highlight any significant findings or patterns. About 3 sentences.
+
+The data and graph indicate an overall decline in the burden of NCDs in the three countries: Nigeria, Ghana, and Cote d'Ivoire. From 1990 to 2008, Cote d'Ivoire had the highest overall burden of NCDs before being overtaken by Ghana in 2009 to 2020, on average. Nigeria had the lowest burden of NCDs from 2000 to 2020. 
