@@ -1,12 +1,15 @@
 # Non-Communicable Disease Burden (NCD)
 
 
-```{r}
+```{r, echo = FALSE}
 # Load necessary packages
 pacman::p_load(tidyverse, knitr, here)
 
 # Import the non-communicable diseases data
 data_ncd <- read_csv(here("data/burden-of-disease-ncd.csv"))
+```
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = F)
 ```
 
 
@@ -15,6 +18,8 @@ data_ncd <- read_csv(here("data/burden-of-disease-ncd.csv"))
 data_ncd_mini <- data_ncd %>% 
   filter(Code %in% c("BFA", "GHA", "CIV"))
 ```
+
+
 
 
 ## Table of Estimates for NCD Burden Over Time
@@ -28,6 +33,8 @@ data_ncd_wide <- data_ncd_mini %>%
 # Use kable() from the knitr package to render the table.
 kable(data_ncd_wide)
 ```
+
+
 
 
 ## Plot Showing Trends in NCD Burden Over Time
@@ -48,8 +55,8 @@ ggplot(data_ncd_mini, aes(x = Year, y = `DALYs (Disability-Adjusted Life Years) 
 # NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table. 
 ```
 
+
+
 ## Summary of NCD Burden Findings
 
-Provide a brief analysis based on the data presented in the table and chart. Highlight any significant findings or patterns. About 3 sentences.
-
-The data and graph indicate an overall decline in the burden of NCDs in Ghana and Cote d'Ivoire, except in Burkina Faso that has a general increase. From 1990 to 2008, Cote d'Ivoire had the highest overall burden of NCDs before being overtaken by Burkina Faso and Ghana in 2009 to 2020, on average. Burkina Faso recorded the highest burden of NCDs from 2000 to 2020. 
+The data and graph indicate an overall decline in the burden of NCDs in Ghana and Cote d'Ivoire, except in Burkina Faso, which shows a general increase. From 1990 to 2008, Cote d'Ivoire had the highest overall burden of NCDs before being surpassed by Burkina Faso and Ghana, on average, from 2009 to 2020. Among the three countries, Burkina Faso recorded the highest burden of NCDs from 2000 to 2020, while Cote d'Ivoire recorded the lowest burden over the same period.. 

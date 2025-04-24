@@ -1,3 +1,3 @@
 "0","# Filter the dataset to include only the three countries chosen by your group."
 "0","data_ncd_mini <- data_ncd %>% "
-"0","  filter(Entity %in% c(""Nigeria"", ""Ghana"", ""Cote d'Ivoire""))"
+"0","  filter(Code %in% c(""BFA"", ""GHA"", ""CIV""))"

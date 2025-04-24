@@ -1,8 +1,7 @@
 "0","# Here render a table for the DALY burden over time for the three countries. "
 "0","# You should pivot the data wider to show each country in a separate column."
 "0","data_ncd_wide <- data_ncd_mini %>% "
-"0","  select(Entity, Year, `DALYs (Disability-Adjusted Life Years) - Non-communicable diseases - Sex: Both - Age: Age-standardized (Rate)`) %>% "
-"0","  pivot_wider(names_from = Entity, values_from = `DALYs (Disability-Adjusted Life Years) - Non-communicable diseases - Sex: Both - Age: Age-standardized (Rate)`)"
+"0","  pivot_wider(names_from = Year, values_from = `DALYs (Disability-Adjusted Life Years) - Non-communicable diseases - Sex: Both - Age: Age-standardized (Rate)`)"
 "0","# Use kable() from the knitr package to render the table."
 "0","kable(data_ncd_wide)"
 "2","Warning: 'xfun::attr()' is deprecated.

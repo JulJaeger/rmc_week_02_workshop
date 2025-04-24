@@ -1,32 +1,44 @@
 # Non-Communicable Disease Burden (NCD)
 
-```{r}
+
+```{r, echo = FALSE}
 # Load necessary packages
 pacman::p_load(tidyverse, knitr, here)
 
 # Import the non-communicable diseases data
 data_ncd <- read_csv(here("data/burden-of-disease-ncd.csv"))
 ```
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = F)
+```
+
 
 ```{r}
 # Filter the dataset to include only the three countries chosen by your group.
 data_ncd_mini <- data_ncd %>% 
-  filter(Entity %in% c("Nigeria", "Ghana", "Cote d'Ivoire"))
+  filter(Code %in% c("BFA", "GHA", "CIV"))
 ```
 
+
+
+
 ## Table of Estimates for NCD Burden Over Time
+
 
 ```{r}
 # Here render a table for the DALY burden over time for the three countries. 
 # You should pivot the data wider to show each country in a separate column.
 data_ncd_wide <- data_ncd_mini %>% 
-  select(Entity, Year, `DALYs (Disability-Adjusted Life Years) - Non-communicable diseases - Sex: Both - Age: Age-standardized (Rate)`) %>% 
-  pivot_wider(names_from = Entity, values_from = `DALYs (Disability-Adjusted Life Years) - Non-communicable diseases - Sex: Both - Age: Age-standardized (Rate)`)
+  pivot_wider(names_from = Year, values_from = `DALYs (Disability-Adjusted Life Years) - Non-communicable diseases - Sex: Both - Age: Age-standardized (Rate)`)
 # Use kable() from the knitr package to render the table.
 kable(data_ncd_wide)
 ```
 
+
+
+
 ## Plot Showing Trends in NCD Burden Over Time
+
 
 ```{r}
 # Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
@@ -34,7 +46,7 @@ kable(data_ncd_wide)
 ggplot(data_ncd_mini, aes(x = Year, y = `DALYs (Disability-Adjusted Life Years) - Non-communicable diseases - Sex: Both - Age: Age-standardized (Rate)`, color = Entity)) +
   geom_line() +
   labs(
-    title = "DALY Burden Over Time (Nigeria, Ghana, Cote d'Ivoire)",
+    title = "DALY Burden Over Time (Burkina Faso, Ghana, Cote d'Ivoire)",
     x = "Year",
     y = "DALY"
   ) +
@@ -43,8 +55,8 @@ ggplot(data_ncd_mini, aes(x = Year, y = `DALYs (Disability-Adjusted Life Years) 
 # NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table. 
 ```
 
+
+
 ## Summary of NCD Burden Findings
 
-Provide a brief analysis based on the data presented in the table and chart. Highlight any significant findings or patterns. About 3 sentences.
-
-The data and graph indicate an overall decline in the burden of NCDs in the three countries: Nigeria, Ghana, and Cote d'Ivoire. From 1990 to 2008, Cote d'Ivoire had the highest overall burden of NCDs before being overtaken by Ghana in 2009 to 2020, on average. Nigeria had the lowest burden of NCDs from 2000 to 2020. 
+The data and graph indicate an overall decline in the burden of NCDs in Ghana and Cote d'Ivoire, except in Burkina Faso, which shows a general increase. From 1990 to 2008, Cote d'Ivoire had the highest overall burden of NCDs before being surpassed by Burkina Faso and Ghana, on average, from 2009 to 2020. Among the three countries, Burkina Faso recorded the highest burden of NCDs from 2000 to 2020, while Cote d'Ivoire recorded the lowest burden over the same period.. 
