@@ -1,15 +1,12 @@
 # Non-Communicable Disease Burden (NCD)
 
 
-```{r, echo = FALSE}
+```{r}
 # Load necessary packages
 pacman::p_load(tidyverse, knitr, here)
 
 # Import the non-communicable diseases data
 data_ncd <- read_csv(here("data/burden-of-disease-ncd.csv"))
-```
-```{r, echo=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = F)
 ```
 
 
