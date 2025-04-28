@@ -1,0 +1,444 @@
+# Load necessary packages
+pacman::p_load(tidyverse, knitr, here)
+# Load necessary packages
+pacman::p_load(tidyverse, knitr, here)
+# Import the communicable diseases data
+data_cmnn <- read_csv(here("data/burden-of-disease-cmnn.csv"))
+View(data_cmnn)
+View(data_cmnn)
+View(data_cmnn)
+# Ghana, Burkino Faso, Cote dIvoore
+data_cmnn_mini <- data_cmnn %>%
+filter(Code %in% c("CIV", "GHA", "BFA"))
+View(data_cmnn_mini)
+```{r eval=F}
+# Load necessary packages
+pacman::p_load(tidyverse, knitr, here)
+# Import the communicable diseases data
+data_cmnn <- read_csv(here("data/burden-of-disease-cmnn.csv"))
+View(data_cmnn_mini)
+# Here render a table for the DALY burden over time for the three countries.
+# You should pivot the data wider to show each country in a separate column.
+data_cmnn_wide <- data_cmnn_mini %>%
+pivot_wider(
+names_from = year,    # Column whose values will become new column names
+values_from = value   # Column whose values will fill the new columns
+)
+# Here render a table for the DALY burden over time for the three countries.
+# You should pivot the data wider to show each country in a separate column.
+data_cmnn_wide <- data_cmnn_mini %>%
+pivot_wider(
+names_from = Year,    # Column whose values will become new column names
+values_from = value   # Column whose values will fill the new columns
+)
+data_cmnn_mini
+# Here render a table for the DALY burden over time for the three countries.
+# You should pivot the data wider to show each country in a separate column.
+data_cmnn_wide <- data_cmnn_mini %>%
+pivot_wider(
+names_from = Year,
+values_from =  `DALYs (Disability-Adjusted Life Years) - Communicable, maternal, neonatal, and nutritional diseases - Sex: Both - Age: Age-standardized (Rate)`
+)
+data_cmnn_mini <- data_cmnn %>%
+filter(Code %in% c("CIV", "GHA", "BFA")) %>%
+rename(dalys = `DALYs (Disability-Adjusted Life Years) - Communicable, maternal, neonatal, and nutritional diseases - Sex: Both - Age: Age-standardized (Rate)`)
+# Here render a table for the DALY burden over time for the three countries.
+# You should pivot the data wider to show each country in a separate column.
+data_cmnn_wide <- data_cmnn_mini %>%
+pivot_wider(
+names_from = Year,
+values_from = dalys
+)
+View(data_cmnn_wide)
+View(data_cmnn_mini)
+View(data_cmnn_wide)
+kable(data_cmnn_wide, col.names = c("Country", "Code"),
+caption = "DALYS by Country and Year")
+kable(data_cmnn_wide,,
+caption = "DALYS by Country and Year")
+kable(data_cmnn_wide,
+caption = "DALYS by Country and Year")
+kable(data_cmnn_wide,
+col.names = c("Country", "Country Code" as.character(1990:2029))
+kable(data_cmnn_wide,
+col.names = c("Country", "Country Code", as.character(1990:2029))
+caption = "DALYS by Country and Year")
+kable(data_cmnn_wide,
+col.names = c("Country", "Country Code", as.character(1990:2029)),
+caption = "DALYS by Country and Year")
+kable(data_cmnn_wide,
+col.names = c("Country", "Country Code", as.character(1990:2019)),
+caption = "DALYS by Country and Year")
+# Load necessary packages
+pacman::p_load(tidyverse, knitr, here)
+library(dplyr)
+library(tidyr)
+library(knitr)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, eval = FALSE)
+```{r selected countries}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, eval = FALSE, echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo = FALSE)
+ggplot(data_cmnn_mini,
+mapping = aes(x = Year, y = dalys)) +
+geom_line()
+ggplot(data_cmnn_mini,
+mapping = aes(x = Year,
+y = dalys,
+fill = Country)) +
+geom_line()
+ggplot(data_cmnn_mini,
+mapping = aes(x = Year,
+y = dalys)) +
+geom_line(fill = Country)
+View(data_cmnn_mini)
+ggplot(data_cmnn_mini,
+mapping = aes(x = Year,
+y = dalys)) +
+geom_line(fill = Entity)
+ggplot(data_cmnn_mini,
+mapping = aes(x = Year,
+y = dalys,
+fill = Entity)) +
+geom_line()
+ggplot(data_cmnn_mini,
+mapping = aes(x = Year,
+y = dalys,
+color = Entity)) +
+geom_line()
+View(data_cmnn)
+ggplot(data_cmnn_mini,
+mapping = aes(x = Year,
+y = dalys,
+color = Entity)) +
+geom_line() +
+labs(title = "DALYs over time",
+x = "Year",
+y = "DALYs (Disability Adjusted Life Years") +
+theme_minimal()
+ggplot(data_cmnn_mini,
+mapping = aes(x = Year,
+y = dalys,
+color = Entity)) +
+geom_line() +
+labs(title = "DALYs (Disability Adjusted Life Years) over time",
+x = "Year",
+y = "DALYs") +
+theme_minimal()
+ggplot(data_cmnn_mini,
+mapping = aes(x = Year,
+y = dalys,
+color = Entity)) +
+geom_line() +
+labs(title = "DALYs (Disability Adjusted Life Years) over time",
+x = "Year",
+y = "DALYs") +
+theme_minimal() +
+plot.title = element_text(face = "bold", hjust = 0.5)
+ggplot(data_cmnn_mini,
+mapping = aes(x = Year,
+y = dalys,
+color = Entity)) +
+geom_line() +
+labs(title = "DALYs (Disability Adjusted Life Years) over time",
+x = "Year",
+y = "DALYs") +
+theme_minimal()
+ggplot(data_cmnn_mini,
+mapping = aes(x = Year,
+y = dalys,
+color = Entity)) +
+geom_line() +
+labs(title = "DALYs (Disability Adjusted Life Years) over time",
+x = "Year",
+y = "DALYs") +
+theme_minimal() +
+theme(
+plot.title = element_text(face = "bold", hjust = 0.5) # Bold and centered title
+)
+ggplot(data_cmnn_mini,
+mapping = aes(x = Year,
+y = dalys,
+color = Entity)) +
+geom_line() +
+labs(title = "DALYs (Disability Adjusted Life Years) over time",
+x = "Year",
+y = "DALYs (in Persons Years)") +
+theme_minimal() +
+theme(
+plot.title = element_text(face = "bold", hjust = 0.5) # Bold and centered title
+)
+ggplot(data_cmnn_mini,
+mapping = aes(x = Year,
+y = dalys,
+color = Entity)) +
+geom_line() +
+labs(title = "DALYs (Disability Adjusted Life Years) over time",
+x = "Year",
+y = "DALYs (in Persons Years)",
+color = "Countries") +
+theme_minimal() +
+theme(
+plot.title = element_text(face = "bold", hjust = 0.5) # Bold and centered title
+)
+ggplot(data_cmnn_mini,
+mapping = aes(x = Year,
+y = dalys,
+color = Entity)) +
+geom_line() +
+geom_point() +
+labs(title = "DALYs (Disability Adjusted Life Years) over time",
+x = "Year",
+y = "DALYs (in Persons Years)",
+color = "Countries") +
+theme_minimal() +
+theme(
+plot.title = element_text(face = "bold", hjust = 0.5) # Bold and centered title
+)
+
+# Import the overall disease data
+data_overall <- read_csv(here("data/burden-of-disease-all-causes.csv"))
+View(data_overall)
+# Filter the dataset to include only the three countries chosen by your group.
+data_overall_mini <-data_overall %>%  filter(Ghana, Burkina Faso, Cote d'Ivoire)
+# Filter the dataset to include only the three countries chosen by your group.
+data_overall_mini <-data_overall %>%  filter(Ghana, Burkina Faso )
+# Filter the dataset to include only the three countries chosen by your group.
+data_overall_mini <-data_overall %>% filter(Entity %in% c("Ghana", "Burkina Faso", "Cote d'Ivoire"))
+View(data_overall_mini)
+# Here render a table for the DALY burden over time for the three countries.
+# You should pivot the data wider to show each country in a separate column.
+data_overall_wide <- pivot_wider(data_overall_mini)
+# Here render a table for the DALY burden over time for the three countries.
+# You should pivot the data wider to show each country in a separate column.
+data_overall_wide <- pivot_wider(data_overall_mini$Entity)
+# Here render a table for the DALY burden over time for the three countries.
+# You should pivot the data wider to show each country in a separate column.
+data_overall_wide <- pivot_wider(data_overall_mini$Year)
+print(data_overall_mini)
+data_mini_clean <-  data_overall_mini %>%
+rename(Country = Entity, Daly = `DALYs (Disability-Adjusted Life Years) - All causes - Sex: Both - Age: Age-standardized (Rate)`)
+View(data_overall_mini)
+View(data_overall_mini)
+View(data_mini_clean)
+# Here render a table for the DALY burden over time for the three countries.
+# You should pivot the data wider to show each country in a separate column.
+data_overall_wide <- data_mini_clean %>%  select(Year, Country ,Daly) %>%
+pivot_wider(names_from = Country,values_from = Daly)
+View(data_overall_wide)
+# Use kable() from the knitr package to render the table.
+kable(data_overall_wide , caption = "Daly Burden over time (Age Standardised Rate)")
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(size =1) + geom_point(size=2) +
+labs(
+title = "Trend of DALY Burden Over Time",
+subtitle = "Age-standardized DALY Rates for Ghana, Burkina Faso, and Cote d'Ivoire",
+x = "Year",
+y = "DALY (Age-standardized Rate)",
+color = "Country"
+) +
+theme_minimal(base_size = 14) +
+theme(
+legend.position = "top",
+plot.title = element_text(face = "bold"),
+axis.text.x = element_text(angle = 45, hjust = 1))
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(line_width= 1) + geom_point(size=2) +
+labs(
+title = "Trend of DALY Burden Over Time",
+subtitle = "Age-standardized DALY Rates for Ghana, Burkina Faso, and Cote d'Ivoire",
+x = "Year",
+y = "DALY (Age-standardized Rate)",
+color = "Country"
+) +
+theme_minimal(base_size = 14) +
+theme(
+legend.position = "top",
+plot.title = element_text(face = "bold"),
+axis.text.x = element_text(angle = 45, hjust = 1))
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(linewidth = 1) + geom_point(size=2) +
+labs(
+title = "Trend of DALY Burden Over Time",
+subtitle = "Age-standardized DALY Rates for Ghana, Burkina Faso, and Cote d'Ivoire",
+x = "Year",
+y = "DALY (Age-standardized Rate)",
+color = "Country"
+) +
+theme_minimal(base_size = 14) +
+theme(
+legend.position = "top",
+plot.title = element_text(face = "bold"),
+axis.text.x = element_text(angle = 45, hjust = 1))
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(linewidth = 1) + geom_point(size=2) +
+labs(
+title = "Trend of DALY Burden Over Time",
+subtitle = "Age-standardized DALY Rates for Ghana, Burkina Faso, and Cote d'Ivoire",
+x = "Year",
+y = "DALY (Age-standardized Rate)",
+color = "Country"
+) +
+theme_minimal(base_size = 14) +
+theme(
+legend.position = "top",
+plot.title = element_text(face = "bold"),
+axis.text.x = element_text(angle = 45, hjust = 1))
+print(plot)
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(linewidth = 2) + geom_point(size=1) +
+labs(
+title = "Trend of DALY Burden Over Time",
+subtitle = "Age-standardized DALY Rates for
+Ghana, Burkina Faso, and Cote d'Ivoire",
+x = "Year",
+y = "DALY (Age-standardized Rate)",
+color = "Country"
+) +
+theme_minimal(base_size = 14) +
+theme(
+legend.position = "top",
+plot.title = element_text(face = "bold"),
+axis.text.x = element_text(angle = 45, hjust = 1))
+print(plot)
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(linewidth = 2) + geom_point(size=2) +
+labs(
+title = "Trend of DALY Burden Over Time",
+subtitle = "Age-standardized DALY Rates for
+Ghana, Burkina Faso, and Cote d'Ivoire",
+x = "Year",
+y = "DALY (Age-standardized Rate)",
+color = "Country"
+) +
+theme_minimal(base_size = 14) +
+theme(
+legend.position = "top",
+plot.title = element_text(face = "bold"),
+axis.text.x = element_text(angle = 45, hjust = 1))
+print(plot)
+2
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(linewidth = 1) + geom_point(size=2) +
+labs(
+title = "Trend of DALY Burden Over Time",
+subtitle = "Age-standardized DALY Rates for
+Ghana, Burkina Faso, and Cote d'Ivoire",
+x = "Year",
+y = "DALY (Age-standardized Rate)",
+color = "Country"
+) +
+theme_minimal(base_size = 14) +
+theme(
+legend.position = "top",
+plot.title = element_text(face = "bold"),
+axis.text.x = element_text(angle = 45, hjust = 1))
+print(plot)
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(linewidth = 1) + geom_point(size=2) +
+labs(
+title = "Trend of DALY Burden Over Time",
+subtitle = "Age-standardized DALY Rates for
+Ghana, Burkina Faso, and Cote d'Ivoire",
+x = "Year",
+y = "DALY (Age-standardized Rate)",
+color = "Country"
+) +
+theme_minimal()
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(linewidth = 1) + geom_point(size=2) +
+labs(
+title = "Trend of DALY Burden Over Time",
+subtitle = "Age-standardized DALY Rates for
+Ghana, Burkina Faso, and Cote d'Ivoire",
+x = "Year",
+y = "DALY (Age-standardized Rate)",
+color = "Country"
+) +
+theme_minimal()
+print(plot)
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(linewidth = 1) + geom_point(size=2) + scale_x_continuous(breaks = all_years)
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(linewidth = 1) + geom_point(size=2) + scale_x_continuous(breaks = Year)
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(linewidth = 1) + geom_point(size=2) + scale_x_continuous()
+print(plot)
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(linewidth = 1) + geom_point(size=2) + scale_x_continuous(breaks = all_years) +
+labs(
+title = "Trend of DALY Burden Over Time",
+subtitle = "Age-standardized DALY Rates for
+Ghana, Burkina Faso, and Cote d'Ivoire",
+x = "Year",
+y = "DALY (Age-standardized Rate)",
+color = "Country"
+) +
+theme_minimal()
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(linewidth = 1) + geom_point(size=2) + scale_x_continuous(breaks = data_mini_clean$Year) +
+labs(
+title = "Trend of DALY Burden Over Time",
+subtitle = "Age-standardized DALY Rates for
+Ghana, Burkina Faso, and Cote d'Ivoire",
+x = "Year",
+y = "DALY (Age-standardized Rate)",
+color = "Country"
+) +
+theme_minimal()
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(linewidth = 1) + geom_point(size=2) + scale_x_continuous(breaks = data_mini_clean$Year) +
+labs(
+title = "Trend of DALY Burden Over Time",
+subtitle = "Age-standardized DALY Rates for
+Ghana, Burkina Faso, and Cote d'Ivoire",
+x = "Year",
+y = "DALY (Age-standardized Rate)",
+color = "Country"
+) +
+theme_minimal()
+print(plot)
+# Here, plot a line graph showing the trend of DALY burden for the chosen countries over time. You can use ggplot2 to create this plot. Each country's line should be a different color.
+# NOTE: Use your long 'mini' data frame for plotting, not the wide data used for the table.
+plot <- ggplot(data = data_mini_clean , mapping = aes(x= Year,y= Daly,color = Country)) +
+geom_line(linewidth = 1) + geom_point(size=2)  +
+labs(
+title = "Trend of DALY Burden Over Time",
+subtitle = "Age-standardized DALY Rates for
+Ghana, Burkina Faso, and Cote d'Ivoire",
+x = "Year",
+y = "DALY (Age-standardized Rate)",
+color = "Country"
+) +
+theme_minimal()
+print(plot)
+
